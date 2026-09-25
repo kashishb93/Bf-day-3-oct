@@ -5,134 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Boyfriend's Day ❤️</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:Poppins,sans-serif;background:linear-gradient(#ffe0ed,#fff8fb,#fff);overflow-x:hidden;color:#555;}
-#hearts{position:fixed;inset:0;pointer-events:none;z-index:0;}
-.heart{position:absolute;bottom:-40px;animation:floatUp linear forwards;opacity:0;}
-@keyframes floatUp{0%{transform:translateY(0) scale(.4);opacity:0}15%{opacity:.9}100%{transform:translateY(-120vh) scale(1.5) rotate(360deg);opacity:0}}
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px;position:relative;z-index:2;}
-.hero h1{font-family:'Great Vibes';font-size:70px;color:#ff4081;}
-.hero p{margin-top:15px;font-size:18px;max-width:300px;line-height:1.8;}
-.btn{background:#ff4081;color:white;border:none;padding:15px 30px;border-radius:40px;font-size:16px;margin-top:25px;box-shadow:0 8px 20px rgba(255,64,129,.3);}
-.section{padding:55px 20px;max-width:520px;margin:auto;position:relative;z-index:2;}
-.title{font-family:'Great Vibes';font-size:46px;color:#ff4081;text-align:center;margin-bottom:20px;}
-.card{background:white;padding:22px;border-radius:28px;box-shadow:0 10px 30px rgba(255,110,170,.15);}
-function openLetter() {
-  const letter = document.getElementById("letter");
-  letter.style.display = "block";
-
-  if (letterText.innerHTML === "") {
-    let i = 0;
-    function type() {
-      if (i < letterMessage.length) {
-        letterText.innerHTML += letterMessage.charAt(i);
-        i++;
-        setTimeout(type, 35);
-      }
-    }
-    type();
-  }
-}
-#letter{display:none;margin-top:18px;animation:fade .7s ease;line-height:2;}
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.photo{background:white;padding:8px;border-radius:18px;transform:rotate(-2deg);box-shadow:0 10px 20px rgba(255,120,170,.18);cursor:pointer;}
-.photo:nth-child(even){transform:rotate(2deg)}
-.photo img{width:100%;height:170px;object-fit:cover;border-radius:12px;}
-#viewer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);justify-content:center;align-items:center;z-index:99;}
-#viewer img{width:90%;max-height:80%;border-radius:25px;}
-.close{position:absolute;top:20px;right:25px;font-size:35px;color:white;cursor:pointer;}
-.music{text-align:center;background:#fff2f7;padding:22px;border-radius:25px;}
-audio{width:100%;margin-top:12px;}
-function openGift() {
-  document.getElementById("giftBox").innerHTML = "💝";
-  document.getElementById("giftMessage").style.display = "block";
-  document.getElementById("secretText").innerHTML = surpriseMessage;
-
-  for (let i = 0; i < 40; i++) {
-    makeHeart();
-  }
-}
-@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-footer{text-align:center;padding:50px;color:#ff5f98;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:linear-gradient(180deg,#ffe2ee,#fff7fb,#fff);overflow-x:hidden;color:#444}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.heart{position:absolute;bottom:-60px;animation:floatUp linear forwards;opacity:0;filter:drop-shadow(0 0 10px rgba(255,105,180,.35))}
+@keyframes floatUp{0%{transform:translateY(0) scale(.4);opacity:0}15%{opacity:1}100%{transform:translateY(-120vh) scale(1.4) rotate(360deg);opacity:0}}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px;position:relative;z-index:2}
+.hero h1{font-family:"Great Vibes",cursive;font-size:70px;color:#ff4b8b;line-height:1}
+.hero p{margin-top:18px;font-size:17px;line-height:1.7;max-width:300px;color:#666}
+button{background:#ff4b8b;color:#fff;border:none;padding:15px 30px;border-radius:40px;font-size:16px;margin-top:25px;box-shadow:0 10px 20px rgba(255,75,139,.25)}
+.section{padding:60px 20px;max-width:520px;margin:auto;position:relative;z-index:2}.title{font-family:"Great Vibes",cursive;font-size:46px;color:#ff4b8b;text-align:center;margin-bottom:25px}.card{background:#fff;padding:22px;border-radius:28px;box-shadow:0 10px 30px rgba(255,120,170,.15)}
+.envelope{background:#fff1f7;padding:28px;border-radius:25px;text-align:center;cursor:pointer;transition:.35s}.envelope:hover{transform:scale(1.03)}#letter{display:none;margin-top:20px;line-height:2;animation:fade .8s ease}.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.photo{background:#fff;padding:8px;border-radius:18px;box-shadow:0 10px 20px rgba(255,120,170,.15);cursor:pointer;transform:rotate(-2deg);transition:.3s}.photo:nth-child(even){transform:rotate(2deg)}.photo:hover{transform:scale(1.05) rotate(0)}.photo img{width:100%;height:170px;object-fit:cover;border-radius:12px}#viewer{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);justify-content:center;align-items:center;z-index:99}#viewer img{width:90%;max-height:80%;border-radius:22px}.close{position:absolute;top:20px;right:25px;color:#fff;font-size:35px;cursor:pointer}.gift{text-align:center;font-size:90px;cursor:pointer;transition:.3s}.gift:hover{transform:scale(1.08) rotate(-5deg)}#giftMessage{display:none;margin-top:20px;animation:fade .8s ease}audio{width:100%;margin-top:15px}footer{text-align:center;padding:60px;color:#ff5c97;font-size:14px}.count{text-align:center;font-size:32px;font-weight:bold;color:#ff4b8b;margin-top:10px}@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
 <div id="hearts"></div>
-<section class="hero">
-<p style="letter-spacing:4px;color:#ff6ea8;font-size:12px;">03 OCTOBER • NATIONAL BOYFRIEND'S DAY</p>
-<h1>To My Favorite Boy ❤️</h1>
-<p>A tiny surprise made only for you.</p>
-<button class="btn" onclick="document.getElementById('envelope').scrollIntoView({behavior:'smooth'})">Open Surprise 💌</button>
-</section>
-<section class="section" id="envelope">
-<div class="title">Open My Letter 💌</div>
-<div class="envelope" onclick="openLetter()">
-<h2>💌 Tap The Envelope 💌</h2>
-<p style="margin-top:10px;color:#888;">A little letter waiting for you...</p>
-</div>
-<div id="letter" class="card">
-<p id="letterText"></p>
-</div>
-</section>
-<section class="section">
-<div class="title">Our Memories 📸</div>
-<div class="gallery">
-<div class="photo" onclick="showPhoto('IMG_3819.jpeg')"><img src="IMG_3819.jpeg"></div>
-<div class="photo" onclick="showPhoto('IMG_3820.jpeg')"><img src="IMG_3820.jpeg"></div>
-<div class="photo" onclick="showPhoto('IMG_3821.jpeg')"><img src="IMG_3821.jpeg"></div>
-<div class="photo" onclick="showPhoto('IMG_3822.jpeg')"><img src="IMG_3822.jpeg"></div>
-</div>
-<p style="text-align:center;margin-top:15px;color:#ff5f98;">Tap any photo 🤍</p>
-</section>
-<section class="section">
-<div class="title">Open Your Gift 🎁</div>
-<div class="gift" onclick="openGift()" id="giftBox">🎁</div>
-<div id="giftMessage" class="card">
-<h2 style="font-family:'Great Vibes';font-size:40px;color:#ff4081;">Happy Boyfriend's Day ❤️</h2>
-<p id="secretText" style="line-height:2;margin-top:15px;"></p>
-<div class="music" style="margin-top:20px;">
-<h3>🎵 Our Song</h3>
-<audio controls>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-<p style="font-size:12px;color:#888;margin-top:10px;">Replace song.mp3 with your own song.</p>
-</div>
-</div>
-</section>
-<footer>♡ Made With Love ♡</footer>
+<section class="hero"><p style="letter-spacing:4px;color:#ff6da6;font-size:12px;">03 OCTOBER • NATIONAL BOYFRIEND'S DAY</p><h1>To My Favorite Boy ❤️</h1><p>A tiny surprise made only for you. 💗</p><button onclick="document.getElementById('letterSection').scrollIntoView({behavior:'smooth'})">Open My Heart 💌</button></section>
+<section class="section" id="letterSection"><div class="title">Tap The Letter 💌</div><div class="envelope" onclick="openLetter()"><h2>💌 Open Letter 💌</h2><p style="margin-top:10px;color:#888;">Click me cutuuu 🌷</p></div><div id="letter" class="card"><p id="letterText"></p></div></section>
+<section class="section"><div class="title">Our Memories 📸</div><div class="gallery"><div class="photo" onclick="showPhoto('IMG_3819.jpeg')"><img src="IMG_3819.jpeg"></div><div class="photo" onclick="showPhoto('IMG_3820.jpeg')"><img src="IMG_3820.jpeg"></div><div class="photo" onclick="showPhoto('IMG_3821.jpeg')"><img src="IMG_3821.jpeg"></div><div class="photo" onclick="showPhoto('IMG_3822.jpeg')"><img src="IMG_3822.jpeg"></div></div><p style="text-align:center;margin-top:15px;color:#ff5c97;">Tap any photo 🤍</p></section>
+<section class="section"><div class="title">Your Gift 🎁</div><div class="gift" onclick="openGift()" id="giftBox">🎁</div><div id="giftMessage" class="card"><h2 style="font-family:'Great Vibes';font-size:40px;color:#ff4b8b;">Happy Boyfriend's Day ❤️</h2><p id="secretText" style="line-height:2;margin-top:15px;"></p><div style="margin-top:25px;background:#fff3f8;padding:18px;border-radius:20px;"><h3 style="color:#ff4b8b;">🎵 Our Song</h3><audio controls><source src="song.mp3" type="audio/mpeg"></audio><p style="font-size:12px;color:#888;margin-top:8px;">Blue – Yung Kai 💗</p></div></div></section>
+<section class="section"><div class="title">Countdown ⏳</div><div class="card"><div id="countdown" class="count"></div></div></section>
+<footer><div style="font-size:26px;">♡ ♡ ♡</div><p>Forever My Favorite Person 💗</p><p style="margin-top:8px;">Made with lots of love 🌷</p></footer>
 <div id="viewer"><span class="close" onclick="closePhoto()">✕</span><img id="bigPhoto"></div>
 <script>
-const emojis=['❤️','💗','💖','💕','🤍'];
-const heartBox=document.getElementById('hearts');
-function makeHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(18+Math.random()*24)+'px';h.style.animationDuration=(5+Math.random()*6)+'s';heartBox.appendChild(h);setTimeout(()=>h.remove(),11000);}
-setInterval(makeHeart,280);for(let i=0;i<25;i++) setTimeout(makeHeart,i*120);
-const letterMessage = `Heyy cutuuu 😭💗
+const emojis=["❤️","💗","💖","💕","🤍"];
+const heartBox=document.getElementById("hearts");
+function makeHeart(){const h=document.createElement("div");h.className="heart";h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];h.style.left=Math.random()*100+"vw";h.style.fontSize=(18+Math.random()*25)+"px";h.style.animationDuration=(5+Math.random()*5)+"s";heartBox.appendChild(h);setTimeout(()=>h.remove(),10000)}
+setInterval(makeHeart,250);for(let i=0;i<25;i++)setTimeout(makeHeart,i*120);
+const letterMessage=`Heyy cutuuu 😭💗
 
-Happieee BOYFRIEND'S DAY MERI JAANNNN ❤️
+Happieee BOYFRIEND'S DAY MERI JAAN ❤️
 
-Lovbb uhh 😭 Uhh missing me alreadyy?? Huhhh... koiniii, aap miss mat krooo. 🥹🌸
+Lovbb uhh 😭 Uhh missing me alreadyy?? Huhhh... koinii, aap miss mt krooo. 🥹🌸
 
-I just wanted to tell my babyy that uhh madeee my lifeee more moree special. Aur merko acha lgta hai gussa krna aur pareshaan krna aapkooo. 😭💗
+I just wanted to tell my babyy that uhh madeee my lifeee more moree spcl. Aur merko acha lgta hai gussa krna aur pareshaan krna aapkooo. 😭💗
 
-Aap serious mat hua kroo, okayyy? 🫶🏻
+Aap serious mt hua kroo okayyy. 🫶🏻
 
-And uk... I just lovee uh onlyy. Merko tere liyee sbb kuch krna hai jo m kr skti hu. 😭 Pr kar nahi pati. Gussa b control krne ki koshish krti hu.
+And uk I just lovee uh onlyy. Merko tere liee sbb kuch krna hai jo m kr skti hu 😭 pr kar nahi pati. Gussa b control krne ki koshish krti hu.
 
-But to kya hua... aap mere ho. 😚 Kuch b kru, mera hak h gussa krna. Hehehe. 🤭
+But to kya hua... aap mere ho 😚 kuch b kru mera hak h gussa krna. 🤭
 
-Khrrr... babuuuuu, mjeee krooo, hippi hippi rho ekdm okayy? 🐣❤️
+Khrrr... babuuuuu mjeee krooo, hippi hippi rho ekdm okhaa 🐣❤️`;
+const surpriseMessage=`Happyy BF Dayy Babuuu 😭💗
 
-Happy Boyfriend's Day, meri jaan. 💖`;
-const surpriseMessage='Happyy bf dayy babuuu😭💗Lubb uhh so muchh i thought ki m bht acha spcl bna dugi but aapko jamat m jana tha but koinii abi b , 
-  M alreadyyy missing my abbyy lubbb uhhh jldi aaoo nd yeloo 🫂 and uhhh r the bestt 😭💗tera mere sath hona hi sab kuch haii ukk thiss 😚💖';
-let i=0;
-function openLetter(){document.getElementById('letter').style.display='block';if(letterText.innerHTML===''){type();}}
-function type(){if(i<letterMessage.length){letterText.innerHTML+=letterMessage.charAt(i);i++;setTimeout(type,35);}}
-function showPhoto(src){viewer.style.display='flex';bigPhoto.src=src;}
-function closePhoto(){viewer.style.display='none';}
-function openGift(){giftBox.innerHTML='💝';giftMessage.style.display='block';secretText.innerHTML=surpriseMessage;for(let i=0;i<50;i++) makeHeart();}
+Lubb uhh so muchhh. 🥹❤️
+
+I thought ki m bht acha spcl bna dugi... but aapko jamat m jana tha. 😭 Koiniii... abi b ye surprise sirf aapke liye hai. 💌
+
+M alreadyyy missing my abbyy. Lubbb uhhh... jldii aaooo. 🫂💖
+
+Yelooo ek big virtual hugggg 🤍🫂
+
+Uhhh r the besttt 😭💗
+
+Tera mere sath hona hi sab kuch haiii... ukk thiss 😚💖`;
+let typed=false;
+function openLetter(){document.getElementById("letter").style.display="block";if(typed)return;typed=true;let i=0;function type(){if(i<letterMessage.length){document.getElementById("letterText").innerHTML+=letterMessage.charAt(i);i++;setTimeout(type,28)}}type()}
+function showPhoto(src){viewer.style.display="flex";bigPhoto.src=src}
+function closePhoto(){viewer.style.display="none"}
+function openGift(){giftBox.innerHTML="💝";giftMessage.style.display="block";secretText.innerHTML=surpriseMessage;for(let i=0;i<40;i++)makeHeart()}
+const target=new Date("October 3, 2026 00:00:00").getTime();setInterval(()=>{const now=Date.now();const gap=target-now;const d=Math.floor(gap/86400000);const h=Math.floor((gap%86400000)/3600000);const m=Math.floor((gap%3600000)/60000);const s=Math.floor((gap%60000)/1000);document.getElementById("countdown").innerHTML=`${d}d ${h}h ${m}m ${s}s`},1000)
 </script>
 </body>
 </html>
