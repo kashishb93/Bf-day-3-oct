@@ -19,8 +19,22 @@ body{font-family:Poppins,sans-serif;background:linear-gradient(#ffe0ed,#fff8fb,#
 .section{padding:55px 20px;max-width:520px;margin:auto;position:relative;z-index:2;}
 .title{font-family:'Great Vibes';font-size:46px;color:#ff4081;text-align:center;margin-bottom:20px;}
 .card{background:white;padding:22px;border-radius:28px;box-shadow:0 10px 30px rgba(255,110,170,.15);}
-.envelope{background:#fff1f6;padding:30px;border-radius:25px;text-align:center;cursor:pointer;transition:.3s;}
-.envelope:hover{transform:scale(1.04)}
+function openLetter() {
+  const letter = document.getElementById("letter");
+  letter.style.display = "block";
+
+  if (letterText.innerHTML === "") {
+    let i = 0;
+    function type() {
+      if (i < letterMessage.length) {
+        letterText.innerHTML += letterMessage.charAt(i);
+        i++;
+        setTimeout(type, 35);
+      }
+    }
+    type();
+  }
+}
 #letter{display:none;margin-top:18px;animation:fade .7s ease;line-height:2;}
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 .photo{background:white;padding:8px;border-radius:18px;transform:rotate(-2deg);box-shadow:0 10px 20px rgba(255,120,170,.18);cursor:pointer;}
@@ -31,9 +45,15 @@ body{font-family:Poppins,sans-serif;background:linear-gradient(#ffe0ed,#fff8fb,#
 .close{position:absolute;top:20px;right:25px;font-size:35px;color:white;cursor:pointer;}
 .music{text-align:center;background:#fff2f7;padding:22px;border-radius:25px;}
 audio{width:100%;margin-top:12px;}
-.gift{text-align:center;font-size:90px;cursor:pointer;transition:.3s;}
-.gift:hover{transform:scale(1.08) rotate(-5deg)}
-#giftMessage{display:none;margin-top:20px;animation:fade .8s ease;}
+function openGift() {
+  document.getElementById("giftBox").innerHTML = "💝";
+  document.getElementById("giftMessage").style.display = "block";
+  document.getElementById("secretText").innerHTML = surpriseMessage;
+
+  for (let i = 0; i < 40; i++) {
+    makeHeart();
+  }
+}
 @keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 footer{text-align:center;padding:50px;color:#ff5f98;}
 </style>
@@ -88,10 +108,23 @@ const emojis=['❤️','💗','💖','💕','🤍'];
 const heartBox=document.getElementById('hearts');
 function makeHeart(){const h=document.createElement('div');h.className='heart';h.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(18+Math.random()*24)+'px';h.style.animationDuration=(5+Math.random()*6)+'s';heartBox.appendChild(h);setTimeout(()=>h.remove(),11000);}
 setInterval(makeHeart,280);for(let i=0;i<25;i++) setTimeout(makeHeart,i*120);
-const letterMessage='Heyy cutuuu 😭💗Happieee BOYFRIEND'S DAY MERI JAAN Lovbb uhh 😭uhh missing me alreadyy?? huhhh koinii 
-  aap miss mt kroo aur i just wanted to tell my babyy that uhh madeee my lifeee more moree spcl 🥹🌸aur merko acha lgta hai gussa krna aur pareshaan krna aapkooo
-    aap serious mt hua kroo and uk i just lovee uh onlyy merko tere liee sbb kuch krna hai jo m kr skti hu 😭pr kar nahi pati gussa b control krne ki koshish krti
-      but to kya hua aap mere ho kuch b kru mera hak h gussa krna khrr 😚babuuuu mjeee krooo hippi hippi rho ekdm okhaa 🐣bachaaa❤️';
+const letterMessage = `Heyy cutuuu 😭💗
+
+Happieee BOYFRIEND'S DAY MERI JAANNNN ❤️
+
+Lovbb uhh 😭 Uhh missing me alreadyy?? Huhhh... koiniii, aap miss mat krooo. 🥹🌸
+
+I just wanted to tell my babyy that uhh madeee my lifeee more moree special. Aur merko acha lgta hai gussa krna aur pareshaan krna aapkooo. 😭💗
+
+Aap serious mat hua kroo, okayyy? 🫶🏻
+
+And uk... I just lovee uh onlyy. Merko tere liyee sbb kuch krna hai jo m kr skti hu. 😭 Pr kar nahi pati. Gussa b control krne ki koshish krti hu.
+
+But to kya hua... aap mere ho. 😚 Kuch b kru, mera hak h gussa krna. Hehehe. 🤭
+
+Khrrr... babuuuuu, mjeee krooo, hippi hippi rho ekdm okayy? 🐣❤️
+
+Happy Boyfriend's Day, meri jaan. 💖`;
 const surpriseMessage='Happyy bf dayy babuuu😭💗Lubb uhh so muchh i thought ki m bht acha spcl bna dugi but aapko jamat m jana tha but koinii abi b , 
   M alreadyyy missing my abbyy lubbb uhhh jldi aaoo nd yeloo 🫂 and uhhh r the bestt 😭💗tera mere sath hona hi sab kuch haii ukk thiss 😚💖';
 let i=0;
